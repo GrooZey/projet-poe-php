@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `cloudy`.`User` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `pasword` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `profile_picture` VARCHAR(255) NULL,
   `Role_id` INT NOT NULL,
   PRIMARY KEY (`id`),
