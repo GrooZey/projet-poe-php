@@ -14,38 +14,38 @@ class Picture
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private int $id;
+    private ?int $id = null;
 
-    #[ORM\Column(length: 45)]
-    private string $title;
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
-    private string $path;
+    private ?string $path = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private \DateTimeInterface $date;
+    private ?\DateTimeInterface $date = null;
 
-    #[ORM\ManyToOne(inversedBy: 'pictures')]
+    #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private User $User_id;
+    private ?User $publisher = null;
 
-    #[ORM\ManyToMany(targetEntity: Theme::class, inversedBy: 'pictures')]
-    private Collection $Theme_id;
+    #[ORM\ManyToMany(targetEntity: Theme::class)]
+    private Collection $themes;
 
     public function __construct()
     {
-        $this->Theme_id = new ArrayCollection();
+        $this->themes = new ArrayCollection();
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -69,7 +69,7 @@ class Picture
         return $this;
     }
 
-    public function getPath(): string
+    public function getPath(): ?string
     {
         return $this->path;
     }
@@ -81,7 +81,7 @@ class Picture
         return $this;
     }
 
-    public function getDate(): \DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
@@ -93,14 +93,14 @@ class Picture
         return $this;
     }
 
-    public function getUserId(): User
+    public function getPublisher(): ?User
     {
-        return $this->User_id;
+        return $this->publisher;
     }
 
-    public function setUserId(User $User_id): static
+    public function setPublisher(?User $publisher): static
     {
-        $this->User_id = $User_id;
+        $this->publisher = $publisher;
 
         return $this;
     }
@@ -108,23 +108,23 @@ class Picture
     /**
      * @return Collection<int, Theme>
      */
-    public function getThemeId(): Collection
+    public function getThemes(): Collection
     {
-        return $this->Theme_id;
+        return $this->themes;
     }
 
-    public function addThemeId(Theme $themeId): static
+    public function addTheme(Theme $theme): static
     {
-        if (!$this->Theme_id->contains($themeId)) {
-            $this->Theme_id->add($themeId);
+        if (!$this->themes->contains($theme)) {
+            $this->themes->add($theme);
         }
 
         return $this;
     }
 
-    public function removeThemeId(Theme $themeId): static
+    public function removeTheme(Theme $theme): static
     {
-        $this->Theme_id->removeElement($themeId);
+        $this->themes->removeElement($theme);
 
         return $this;
     }
