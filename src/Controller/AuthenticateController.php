@@ -13,7 +13,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 #[Route('/authenticate', name: '')]
 class AuthenticateController extends AbstractController
 {
-    #[Route('/signup', name: 'signup')]
+    #[Route('/signin', name: 'signin')]
     public function signup(UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
@@ -26,7 +26,7 @@ class AuthenticateController extends AbstractController
         );
         $user->setPassword($hashedPassword);
 
-        return $this->render('authenticate/signup.html.twig');
+        return $this->render('authenticate/signin.html.twig');
     }
 
     #[Route('/login', name: 'login')]
