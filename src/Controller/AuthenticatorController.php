@@ -18,7 +18,7 @@ class AuthenticatorController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_home_user',['last_username' => $lastUsername]);
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
