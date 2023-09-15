@@ -16,7 +16,8 @@ class UserProfileController extends AbstractController
             'controller_name' => 'UserProfileController',
         ]);
     }
-    #[Route('/profile', name: 'favorites')]
+
+    #[Route('/favorites', name: 'favorites')]
     public function favorites(): Response
     {
         return $this->render('user/favorites.html.twig', [
