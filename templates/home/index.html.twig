@@ -3,6 +3,12 @@
 {% block body %}
 
 <div class="example-wrapper">
-    <p>Vous êtes connecté {{ app.user.userIdentifier }} !</p>
+    <p>
+    {% if app.user.userIdentifier is defined %}
+        Vous êtes connecté {{ app.user.userIdentifier }} !
+    {% else %}
+        Vous n'êtes pas connecté.
+    {% endif %}
+    </p>
 </div>
 {% endblock %}
