@@ -24,7 +24,7 @@
             </a>
             <h1 class="first-heading">Créez votre compte</h1>
         </div>
-        <form class="form">
+        <form class="form" method="post">
 
             {{ form_errors(registrationForm) }}
 
@@ -50,7 +50,9 @@
             "placeholder": "Confirmez votre mot de passe..."
             }}) }}
 
-            <button type="submit" class="button">Valider</button>
+            <button class="button" type="submit">
+                Valider
+            </button>
 
             {{ form_end(registrationForm) }}
             
