@@ -3,12 +3,18 @@
 {% block body %}
 
 <div class="example-wrapper">
-    <p>
     {% if app.user.userIdentifier is defined %}
-        Vous êtes connecté {{ app.user.userIdentifier }} !
+    <p>Vous êtes connecté {{ app.user.userIdentifier }} !</p>
+    <a href="{{ path('app_logout')}}">   
+        <input type="button" value="Se déconnecter" />
+    </a>
     {% else %}
-        Vous n'êtes pas connecté.
+    <p>Vous n'êtes pas connecté.</p>
+    <a href="{{ path('app_login')}}">   
+        <input type="button" value="Se connecter" />
+    </a>
     {% endif %}
-    </p>
+
+
 </div>
 {% endblock %}
