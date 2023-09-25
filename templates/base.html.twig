@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Cloudy!{% endblock %}</title>
+        <title>{% block title %}Cloudy{% endblock %}</title>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/473/473697.png">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
         {% block stylesheets %}
         {% endblock %}
 
@@ -11,11 +12,8 @@
         {% endblock %}
     </head>
     <body>
-        <header>
-            <h1>Cloudy!</h1>
-        </header>
         {% block body %}{% endblock %}
-        <footer>
+        <footer class="footer">
             <p>Copyright</p>
         </footer>
     </body>
