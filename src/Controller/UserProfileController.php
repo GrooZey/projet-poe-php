@@ -12,16 +12,12 @@ class UserProfileController extends AbstractController
     #[Route('/profile', name: 'profile')]
     public function profile(): Response
     {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserProfileController',
-        ]);
+        return $this->render('user/index.html.twig');
     }
 
     #[Route('/favorites', name: 'favorites')]
     public function favorites(): Response
     {
-        return $this->render('user/favorites.html.twig', [
-            'controller_name' => 'UserProfileController',
-        ]);
+        return $this->render('user/favorites.html.twig');
     }
 }

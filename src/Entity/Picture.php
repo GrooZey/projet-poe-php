@@ -25,6 +25,8 @@ class Picture
     #[ORM\Column(length: 255)]
     private ?string $path = null;
 
+    private ?UploadedFile $file = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 

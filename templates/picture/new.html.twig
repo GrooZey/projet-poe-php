@@ -10,11 +10,20 @@
     <a href="{{ path('app_logout')}} ">   
         <input type="button" value="Mes publications" />
     </a>
-    <a href="{{ path('app_user_favorites')}} ">
-        <input type="button" value="Mes favoris" />
-    </a>
-    <a href="{{ path('app_loged_picture_add')}} ">
-        <input type="button" value="Nouvelle publication" />
-    </a>
 </div>
+<form class="form" method="post">
+
+            {{ form_errors(addPicture) }}
+
+            {{ form_start(addPicture) }}
+
+            {{form_rest(addPicture)}}
+
+            <button class="button" type="submit">
+                Valider
+            </button>
+
+            {{ form_end(addPicture) }}
+            
+        </form>
 {% endblock %}
