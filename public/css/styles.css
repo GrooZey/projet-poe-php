@@ -26,13 +26,18 @@ body {
 }
 
 /* HEADER */
-.header {
+.header-mobile {
+    background-color: #DDDDDD;
+    margin: 0 auto;
+}
+
+.header-desktop {
     background-color: #DDDDDD;
     margin: 0 auto;
     animation: fade-in 0.4s;
 }
 
-.nav-signup {
+.nav-header {
     display: flex;
     min-height: 7rem;
     justify-content: space-between;
@@ -42,8 +47,44 @@ body {
     padding: 25px;
 }
 
+.nav-footer {
+    display: flex;
+    min-height: 7rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #208EDF;
+    border-radius: 20px 20px 0 0;
+    padding: 25px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s;
+    
+    &:active {
+        transform: scale(0.94);
+    }
+}
+
+.title-logo {
+    align-self: center;
+    text-decoration: none;
+}
+
+.title-nav {
+    color: white;
+}
+
 /* MAIN */
 .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 75px - 7rem);
     background-color: #DDDDDD;
     padding: 1.25rem;
 }
@@ -76,6 +117,16 @@ body {
     color: white;
 }
 
+.second-heading {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 30px 0;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+    color: white;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -90,6 +141,11 @@ body {
     font-size: 1.125rem;
     border-radius: 30px;
     margin-bottom: 2rem;
+    border: none;
+
+    &:focus {
+        outline: unset;
+    }
 }
 
 .button {
@@ -102,11 +158,56 @@ body {
     border-radius: 50px;
     height: 10%;
     margin-bottom: 2rem;
+    border: none;
+    box-shadow: 0 2px white;
     transition: all 0.2s;
 }
 
+.button:active {
+    background-color: #00477a;
+    box-shadow: 0 0 white;
+    transform: translateY(2px);
+}
+
 /* FOOTER */
-.footer {
-    background-color: #00355a;
+.footer-mobile {
+    background-color: #DDD;
+    height: 7rem;
+}
+
+.footer-desktop {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
     color: white;
+    padding: 25px 0 25px 0;
+    background-color: #00487c;
+}
+
+.copyright {
+    font-size: 14px;
+}
+
+/* MEDIA QUERIES */
+
+    /* Mobile view */
+@media (max-width: 500px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .footer-desktop {
+        display: none;
+    }
+}
+
+    /* Desktop view */
+@media (min-width: 500px) {
+    .header-mobile {
+        display: none;
+    }
+
+    .footer-mobile {
+        display: none;
+    }
 }

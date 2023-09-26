@@ -12,9 +12,44 @@
         {% endblock %}
     </head>
     <body>
+
+        <header class="header-mobile">
+            <nav class="nav-header">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-fill" viewBox="0 0 16 16" style="height: 5rem; width: 5rem; color: white;">
+                        <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                    </svg>
+                </a>
+                <h1 class="title-nav">Cloudy</h1>
+            </nav>
+        </header>
+
+        <header class="header-desktop">
+            <nav class="nav-header">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-fill" viewBox="0 0 16 16" style="height: 5rem; width: 5rem; color: white;">
+                        <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                    </svg>
+                </a>
+            </nav>
+        </header>
+
         {% block body %}{% endblock %}
-        <footer class="footer">
-            <p>Copyright</p>
+
+        <footer class="footer-mobile">
+            <nav class="nav-footer">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-fill" viewBox="0 0 16 16" style="height: 5rem; width: 5rem; color: white;">
+                        <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                    </svg>
+                    <span class="title-logo">Menu</span>
+                </a>
+            </nav>
         </footer>
+
+        <footer class="footer-desktop">
+            <small class="copyright">&copy; Copyright 2023 - Tous droits réservés</small>
+        </footer>
+
     </body>
 </html>
