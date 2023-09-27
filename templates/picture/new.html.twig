@@ -3,26 +3,27 @@
 {% block body %}
 
 <div class="example-wrapper">
+    {% if app.user.userIdentifier is defined %}
     <p>Vous êtes connecté {{ app.user.userIdentifier }} !</p>
-    <a href="{{ path('app_home')}} ">   
-        <input type="button" value="Retour au menu" />
+    <a href="{{ path('app_logout')}}">
+        <input type="button" value="Se déconnecter" />
     </a>
-    <a href="{{ path('app_home')}} ">   
-        <input type="button" value="Mes publications" />
+    <a href="{{path('app_user_profile')}}">
+        <input type="button" value="Mon profil" />
     </a>
+    {% endif %}
 </div>
 
+{{ form_errors(addPicture) }}
 
-            {{ form_errors(addPicture) }}
+{{ form_start(addPicture) }}
 
-            {{ form_start(addPicture) }}
+{{form_rest(addPicture)}}
 
-            {{form_rest(addPicture)}}
+<button class="button" type="submit">
+    Valider
+</button>
 
-            <button class="button" type="submit">
-                Valider
-            </button>
-
-            {{ form_end(addPicture) }}
+{{ form_end(addPicture) }}
             
 {% endblock %}
