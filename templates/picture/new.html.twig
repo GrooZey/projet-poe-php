@@ -7,11 +7,11 @@
     <a href="{{ path('app_home')}} ">   
         <input type="button" value="Retour au menu" />
     </a>
-    <a href="{{ path('app_logout')}} ">   
+    <a href="{{ path('app_home')}} ">   
         <input type="button" value="Mes publications" />
     </a>
 </div>
-<form class="form" method="post">
+
 
             {{ form_errors(addPicture) }}
 
@@ -25,5 +25,4 @@
 
             {{ form_end(addPicture) }}
             
-        </form>
 {% endblock %}
