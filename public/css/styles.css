@@ -27,13 +27,19 @@ body {
 
 /* HEADER */
 .header-mobile {
+    position: sticky;
+    top: 0;
     background-color: #DDDDDD;
     margin: 0 auto;
+    z-index: 1000;
 }
 
 .header-desktop {
+    position: sticky;
+    top: 0;
     background-color: #DDDDDD;
     margin: 0 auto;
+    z-index: 1000;
     animation: fade-in 0.4s;
 }
 
@@ -43,7 +49,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #208EDF;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 10px 10px;
     padding: 25px;
     filter: drop-shadow(0 1mm 1mm #808080);
 }
@@ -54,14 +60,20 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #208EDF;
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
     padding: 25px;
     filter: drop-shadow(0 -1mm 1mm #808080);
 }
 
-.logo {
+.nav-logged-features {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.main-logo {
+    display: flex;
+    flex-direction: row;
     align-content: center;
     text-decoration: none;
     color: white;
@@ -72,9 +84,9 @@ body {
     }
 }
 
-.logo-desktop {
+.logo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     text-decoration: none;
     color: white;
@@ -102,7 +114,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: calc(100vh - 75px - 7rem);
+    min-height: calc(100vh - 7rem - 7rem);
     background-color: #DDDDDD;
     padding: 1.25rem;
 }
@@ -189,8 +201,30 @@ body {
     transform: translateY(2px);
 }
 
+/* HOME PAGE */
+
+.pictures-crowd {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.pictures-crowd > * {
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.25);
+        transition: all 0.2s;
+    }
+}
+
 /* FOOTER */
 .footer-mobile {
+    position: sticky;
+    bottom: 0;
     background-color: #DDD;
     height: 7rem;
 }
