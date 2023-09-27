@@ -19,4 +19,12 @@
     </a>
     {% endif %}
 </div>
+<div>
+    <ul>
+    {% for pic in pictures %}
+        <li><a href="{{path('app_picture_show')}}">{{ pic.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
 {% endblock %}

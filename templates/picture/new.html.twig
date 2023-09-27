@@ -14,4 +14,16 @@
     {% endif %}
 </div>
 
+{{ form_errors(addPicture) }}
+
+{{ form_start(addPicture) }}
+
+{{form_rest(addPicture)}}
+
+<button class="button" type="submit">
+    Valider
+</button>
+
+{{ form_end(addPicture) }}
+            
 {% endblock %}

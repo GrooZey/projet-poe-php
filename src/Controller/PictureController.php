@@ -12,8 +12,6 @@ class PictureController extends AbstractController
     #[Route('/', name: '')]
     public function index(): Response
     {
-        return $this->render('picture/index.html.twig', [
-            'controller_name' => 'PictureController',
-        ]);
+        return $this->render('picture/index.html.twig');
     }
 }
