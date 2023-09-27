@@ -3,6 +3,64 @@
 {% block body %}
 
 <div class="example-wrapper">
-
+    {% if app.user.userIdentifier is defined %}
+    <p>Vous êtes connecté {{ app.user.userIdentifier }} !</p>
+    <a href="{{ path('app_logout')}}">
+        <input type="button" value="Se déconnecter" />
+    </a>
+    <a href="{{path('app_user_profile')}}">
+        <input type="button" value="Mon profil" />
+    </a>
+    {% else %}
+    <p>Vous n'êtes pas connecté.</p>
+    <a href="{{ path('app_login')}}">
+        <input type="button" value="Se connecter" />
+    </a>
+    {% endif %}
 </div>
+
+<main class="main">
+    <section class="pictures-crowd">
+
+        {# {% for pictures in picture %}
+
+    <div class="center-history-box">
+
+        <div class="bg-blue-rounded">
+
+            <div class="center-history-placement">
+                <div class="text-history">{{ picture.title }}</div>
+                <div class="text-history">{{ picture.description }}</div>
+                <div class="img-history">
+                    <img src="{{ asset('upload') }}{{ picture.path }}" alt="L'image n'a pas pu être chargé">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        document.querySelectorAll(".square-img").forEach(e => {
+            console.log(window.location.hostname);
+            var url = e.dataset.url;
+            console.log(url);
+            e.style.backgroundImage = `url("${url}") !important`;
+            e.style.backgroundSize = `cover`;
+        });
+    </script>
+
+    {% endfor %} #}
+
+        <img src="https://i.ibb.co/s3H6bk3/singer.png" alt="Singer" class="photo-1">
+        <img src="https://i.ibb.co/T1KkBgR/guitar.png" alt="Guitar player" class="photo-2">
+        <img src="https://i.ibb.co/s3H6bk3/singer.png" alt="Singer" class="photo-1">
+        <img src="https://i.ibb.co/T1KkBgR/guitar.png" alt="Guitar player" class="photo-2">
+        <img src="https://i.ibb.co/s3H6bk3/singer.png" alt="Singer" class="photo-1">
+        <img src="https://i.ibb.co/T1KkBgR/guitar.png" alt="Guitar player" class="photo-2">
+        <img src="https://i.ibb.co/s3H6bk3/singer.png" alt="Singer" class="photo-1">
+        <img src="https://i.ibb.co/T1KkBgR/guitar.png" alt="Guitar player" class="photo-2">
+    </section>
+</main>
+
 {% endblock %}

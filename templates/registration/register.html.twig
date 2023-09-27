@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créez votre compte{% endblock %}
+
+{% block body %}
+
+<main class="main">
+    <section class="intro">
+        <div class="title-intro">
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16" style="height: 4rem; width: 4rem; color: white; padding-right: 2rem">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+            <h1 class="first-heading">Créez votre compte</h1>
+        </div>
+        <form class="form" method="post">
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+
+            {{ form_widget(registrationForm.username, {"attr": {
+            "class": "input",
+            "placeholder": "Entrez un pseudo..."
+            }}) }}
+
+            {{ form_widget(registrationForm.email, {"attr": {
+            "class": "input",
+            "placeholder": "Entrez un email..."
+            }}) }}
+
+            {{ form_widget(registrationForm.plainPassword.first, {"attr": {
+            "class": "input",
+            "placeholder": "Entrez un mot de passe..."
+            }}) }}
+
+            {{ form_widget(registrationForm.plainPassword.second, {"attr": {
+            "class": "input",
+            "placeholder": "Confirmez votre mot de passe..."
+            }}) }}
+
+            <button class="button" type="submit">
+                Valider
+            </button>
+
+            {{ form_end(registrationForm) }}
+            
+        </form>
+    </section>
+</main>
+
+{% endblock %}

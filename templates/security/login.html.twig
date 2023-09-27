@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connectez-vous{% endblock %}
+
+{% block body %}
+
+<main class="main">
+    <section class="intro">
+        <div class="title-intro">
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16" style="height: 4rem; width: 4rem; color: white; padding-right: 2rem">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+            <h1 class="first-heading">Connectez vous</h1>
+        </div>
+        <form class="form"  method="post">
+
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+
+            {# <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="input" placeholder="Entrez votre email..." autocomplete="email" required autofocus>
+
+            <input type="password" name="password" id="inputPassword" class="input" placeholder="Entrez votre mot de passe..." autocomplete="current-password" required>
+
+            <button type="submit" class="button">Se connecter</button> #}
+
+            <label for="inputUsername" class="second-heading">Pseudo :</label>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="input" autocomplete="username" required autofocus>
+            <label for="inputPassword" class="second-heading">Mot de passe :</label>
+            <input type="password" name="password" id="inputPassword" class="input" autocomplete="current-password" required>
+
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+            <button class="button" type="submit">
+                Connexion
+            </button>
+            
+        </form>
+    </section>
+</main>
+
+{% endblock %}
