@@ -11,7 +11,7 @@ use App\Entity\Picture;
 class ShowPictureController extends AbstractController
 {
     #[Route('/show', name: 'show')]
-    public function show(Picture $pic): Response
+    public function show(): Response
     {
         return $this->render('show/index.html.twig', [
         ]);
