@@ -3,9 +3,15 @@
 {% block body %}
 
 <div class="example-wrapper">
-    <p>{{pic.title}}</p>
-    <p>{{pic.description}}</p>
-    <img src="/upload/{{pic.path}}"/>
+    <div class="">
+        <div class="">
+            <div class="">{{ pic.title }}</div>
+            <div class="">{{ pic.description }}</div>
+        </div>
+        <div class="">
+            <img src="/upload/{{ pic.path }}" alt="L'image n'a pas pu être chargé" class="">
+        </div>
+    </div>
 </div>
 
 {% endblock %}
