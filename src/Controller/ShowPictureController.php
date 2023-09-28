@@ -12,16 +12,11 @@ use App\Entity\Picture;
 class ShowPictureController extends AbstractController
 {
     #[Route('/show/{id}', name: 'show')]
-    public function show(EntityManagerInterface $entityManager, int $id): Response
+    public function show(EntityManagerInterface $entityManager,int $id): Response
     {
         $pic = $entityManager->getRepository(Picture::class)->find($id);
-        if (!$pic) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$id
-            );
-        }
         return $this->render('show/index.html.twig', [
-            'picture' => $pic,
+            'pic' => $pic,
         ]);
     }
 }

@@ -3,26 +3,13 @@
 {% block body %}
 
 <div class="example-wrapper">
-    {% if app.user.userIdentifier is defined %}
-    <p>Vous êtes connecté {{ app.user.userIdentifier }} !</p>
-    <a href="{{ path('app_home')}} ">   
-        <input type="button" value="Retour au menu" />
-    </a>
-    <a href="{{ path('app_user_pictures')}} ">   
-        <input type="button" value="Mes publications" />
-    </a>
-    <a href="{{ path('app_user_favorites')}} ">
-        <input type="button" value="Mes favoris" />
-    </a>
-    <a href="{{ path('app_loged_picture_add')}} ">
-        <input type="button" value="Nouvelle publication" />
-    </a>
-    {% endif %}
+
 </div>
+
 <div>
     <ul>
     {% for pic in pictures %}
-        <li><a href="{{path('app_picture_show')}}">{{ pic.title }}</a></li>
+        <li><a href="{{path('app_picture_show',{id: pic.id})}}">{{ pic.title }}</a></li>
     {% endfor %}
     </ul>
 </div>
