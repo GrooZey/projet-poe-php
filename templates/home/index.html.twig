@@ -9,23 +9,15 @@
 <main class="main">
     <section class="pictures-crowd">
 
-        {% for picture in pictures %}
+        {% for pic in pictures %}
 
         <div class="pic-block">
             <div class="pic-frame">
-            <img src="/upload/{{ picture.path }}" alt="L'image n'a pas pu être chargé" class="pic-pic">
+                <a href="{{path('app_picture_show',{id: pic.id})}}">
+                <img src="/upload/{{ pic.path }}" alt="L'image n'a pas pu être chargé" class="pic-pic">
+            </a>
             </div>
         </div>
-
-    <script>
-        document.querySelectorAll(".square-img").forEach(e => {
-            console.log(window.location.hostname);
-            var url = e.dataset.url;
-            console.log(url);
-            e.style.backgroundImage = `url("${url}") !important`;
-            e.style.backgroundSize = `cover`;
-        });
-    </script>
 
     {% endfor %}
     </section>

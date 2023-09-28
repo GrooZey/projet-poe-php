@@ -2,16 +2,18 @@
 
 {% block body %}
 
-<div class="example-wrapper">
+<main class="main">
+    <section class="pictures-crowd">
 
-</div>
+        {% for pic in pictures %}
 
-<div>
-    <ul>
-    {% for pic in pictures %}
-        <li><a href="{{path('app_picture_show',{id: pic.id})}}">{{ pic.title }}</a></li>
+        <div class="pic-block">
+            <a href="{{path('app_picture_show',{id: pic.id})}}">
+                <img src="/upload/{{ pic.path }}" alt="L'image n'a pas pu être chargé" class="pic-pic">
+            </a>
+            </div>
+        </div>
     {% endfor %}
-    </ul>
-</div>
-
+    </section>
+</main>
 {% endblock %}
